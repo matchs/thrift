@@ -635,7 +635,7 @@ void t_js_generator::generate_js_struct_definition(ofstream& out,
 
   if (gen_node_) {
     if (is_exported) {
-      out << js_namespace(tstruct->get_program()) << tstruct->get_name() << " = "
+      out << "var " << js_namespace(tstruct->get_program()) << tstruct->get_name() << " = "
           << "module.exports." << tstruct->get_name() << " = function(args) {" << endl;
     } else {
       out << js_namespace(tstruct->get_program()) << tstruct->get_name() << " = function(args) {"
